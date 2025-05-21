@@ -291,7 +291,7 @@ $favorites = get_user_meta($user_id, 'user_favorites', true);
 $is_favorite = is_array($favorites) && in_array(get_the_ID(), $favorites);
                         ?>
                             <button class="keep-button <?php echo $is_favorite ? 'kept' : ''; ?>" data-job-id="<?php echo get_the_ID(); ?>">
-    <span class="star"><i class="fa-solid fa-star"></i></span>
+    <span class="star"></span>
     <?php echo $is_favorite ? 'キープ済み' : 'キープ'; ?>
 </button>
                         <?php else: ?>
@@ -350,10 +350,10 @@ jQuery(document).ready(function($) {
                     if (response.success) {
                         if (response.data.status === 'added') {
                             $button.addClass('kept');
-                            $button.html('<span class="star"><i class="fa-solid fa-star"></i></span> キープ済み');
+                            $button.html('<span class="star"></span> キープ済み');
                         } else {
                             $button.removeClass('kept');
-                            $button.html('<span class="star"><i class="fa-solid fa-star"></i></span> キープ');
+                            $button.html('<span class="star"></span> キープ');
                         }
                     }
                 }

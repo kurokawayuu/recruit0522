@@ -4160,3 +4160,44 @@ function frontend_delete_job() {
     }
 }
 
+// 単一タクソノミーのページネーション対応
+// エリアのページネーション
+add_rewrite_rule(
+    'jobs/location/([^/]+)/page/([0-9]+)/?$',
+    'index.php?post_type=job&job_location=$matches[1]&paged=$matches[2]',
+    'top'
+);
+
+// 職種のページネーション
+add_rewrite_rule(
+    'jobs/position/([^/]+)/page/([0-9]+)/?$',
+    'index.php?post_type=job&job_position=$matches[1]&paged=$matches[2]',
+    'top'
+);
+
+// 雇用形態のページネーション
+add_rewrite_rule(
+    'jobs/type/([^/]+)/page/([0-9]+)/?$',
+    'index.php?post_type=job&job_type=$matches[1]&paged=$matches[2]',
+    'top'
+);
+
+// 施設形態のページネーション
+add_rewrite_rule(
+    'jobs/facility/([^/]+)/page/([0-9]+)/?$',
+    'index.php?post_type=job&facility_type=$matches[1]&paged=$matches[2]',
+    'top'
+);
+
+// 特徴のページネーション
+add_rewrite_rule(
+    'jobs/feature/([^/]+)/page/([0-9]+)/?$',
+    'index.php?post_type=job&job_feature=$matches[1]&paged=$matches[2]',
+    'top'
+);
+// 基本的な求人一覧ページのページネーション
+add_rewrite_rule(
+    'jobs/page/([0-9]+)/?$',
+    'index.php?post_type=job&paged=$matches[1]',
+    'top'
+);

@@ -627,10 +627,10 @@ jQuery(document).ready(function($) {
                     if (response.success) {
                         if (response.data.status === 'added') {
                             $button.addClass('kept');
-                            $button.html('<span class="star"><i class="fa-solid fa-star"></i></span> キープ済み');
+                            $button.html('<span class="star"></span> キープ済み');
                         } else {
                             $button.removeClass('kept');
-                            $button.html('<span class="star"><i class="fa-solid fa-star"></i></span> キープ');
+                            $button.html('<span class="star"></span> キープ');
                         }
                     }
                 }
